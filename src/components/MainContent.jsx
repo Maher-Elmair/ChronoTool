@@ -73,7 +73,7 @@ export default function BasicCard({ mode, changeTheme }) {
           <Stack direction="row" alignItems="center">
             <img
               style={{ width: "30px", marginRight: "4px" }}
-              src="./src/assets/icon/ChronoTool.svg"
+              src={`${import.meta.env.BASE_URL}assets/icon/ChronoTool.svg`}
               alt="ChronoTool"
               loading="lazy"
             />
