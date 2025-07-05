@@ -7,8 +7,6 @@ import "./i18next";
 import React from 'react'; 
 window.React = React; // ← أضف السطر ده مؤقتًا
 
-
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

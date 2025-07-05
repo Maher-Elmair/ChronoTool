@@ -25,11 +25,11 @@ import { useTheme } from "@mui/material/styles";
 // Internationalization hook for translations
 import { useTranslation } from "react-i18next";
 
- // Hook to manage language/direction
+// Hook to manage language/direction
 import { useLocaleLogic } from "../hooks/useLocaleLogic";
 
 // Hook to manage time input and conversion
-import { useTimeLogic } from "../hooks/useTimeLogic";     
+import { useTimeLogic } from "../hooks/useTimeLogic";
 
 // Main UI component that uses theme, locale, and time logic
 export default function BasicCard({ mode, changeTheme }) {
@@ -40,7 +40,8 @@ export default function BasicCard({ mode, changeTheme }) {
   const { locale, direction, flexDir, handleLanguageClick } = useLocaleLogic();
 
   // Get time value, result, and handlers from time logic hook
-  const { timeValue, convertedTime, handlePickerChange, convertTime } = useTimeLogic(t);
+  const { timeValue, convertedTime, handlePickerChange, convertTime } =
+    useTimeLogic(t);
 
   // Wrap theme change logic from parent
   const handleThemeChange = (selectedMode) => {
@@ -72,7 +73,7 @@ export default function BasicCard({ mode, changeTheme }) {
           <Stack direction="row" alignItems="center">
             <img
               style={{ width: "30px", marginRight: "4px" }}
-              src={"public/icon/ChronoTool.svg"}
+              src="./src/assets/icon/ChronoTool.svg"
               alt="ChronoTool"
               loading="lazy"
             />
