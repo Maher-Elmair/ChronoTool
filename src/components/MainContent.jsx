@@ -52,7 +52,7 @@ export default function BasicCard({ mode, changeTheme }) {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Card
         sx={{
-          width: 420,
+          width: { xs: 300, sm: 420, md: 480 },
           p: 4,
           mx: "auto",
           mt: 4,
@@ -77,7 +77,15 @@ export default function BasicCard({ mode, changeTheme }) {
               alt="ChronoTool"
               loading="lazy"
             />
-            <Typography variant="h4">{t("ChronoTool")}</Typography>
+            <Typography
+              variant="h4"
+              sx={{
+                fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                fontWeight: 500,
+              }}
+            >
+              {t("ChronoTool")}
+            </Typography>
           </Stack>
 
           {/* Language Switch Buttons */}
@@ -92,6 +100,19 @@ export default function BasicCard({ mode, changeTheme }) {
                   locale === "en"
                     ? theme.palette.secondary.main
                     : theme.palette.primary.main,
+                display: {
+                  xs: locale === "en" ? "none" : "inline-flex",
+                  sm: "inline-flex",
+                },
+                border: { xs: "none", sm: "1px solid" },
+                borderRadius: { xs: 0, sm: 1 },
+                borderBottom: {
+                  xs: `2px solid ${
+                    locale === "en"
+                      ? theme.palette.secondary.main
+                      : theme.palette.primary.main
+                  }`,
+                },
               }}
               value="en"
               onClick={handleLanguageClick} // Change to English
@@ -104,6 +125,20 @@ export default function BasicCard({ mode, changeTheme }) {
                   locale === "ar"
                     ? theme.palette.secondary.main
                     : theme.palette.primary.main,
+                display: {
+                  xs: locale === "ar" ? "none" : "inline-flex",
+                  sm: "inline-flex",
+                },
+
+                border: { xs: "none", sm: "1px solid" },
+                borderRadius: { xs: 0, sm: 1 },
+                borderBottom: {
+                  xs: `2px solid ${
+                    locale === "en"
+                      ? theme.palette.secondary.main
+                      : theme.palette.primary.main
+                  }`,
+                },
               }}
               value="ar"
               onClick={handleLanguageClick} // Change to Arabic
@@ -117,7 +152,14 @@ export default function BasicCard({ mode, changeTheme }) {
 
         {/* Time Picker Section */}
         <Box>
-          <Typography variant="h6" sx={{ paddingBottom: 2 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              paddingBottom: 2,
+              fontSize: { xs: "0.875rem", sm: "1.25rem", md: "1.5rem" },
+              fontWeight: 500,
+            }}
+          >
             {t("Convert Time from 24h to 12h")}
           </Typography>
           <Stack spacing={2}>
